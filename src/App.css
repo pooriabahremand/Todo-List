@@ -1,38 +1,102 @@
+/* 
+FONT STYLES : 
+  Light 300
+  Regular 400
+  Medium 500
+  Bold 700
+
+
+*/
+
 .App {
   text-align: center;
+  max-width: 900px;
+  margin: 50px auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
+  gap: 30px;
+}
+.todo_input {
+  background-color: aquamarine;
+}
+form {
+  display: flex;
+  justify-content: center;
+  gap: 18.75px;
+  padding: 0 9.375px;
+  margin-bottom: 21.44px;
+}
+.task_input {
+  width: 300px;
+  height: 35px;
+}
+input::placeholder {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.check-box {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.regular-task-container,
+.important-tag,
+.important-completed-task-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.regular-task-container {
+  background-color: orangered;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.important_completed_task {
+  text-decoration: line-through;
+  background-color: skyblue;
+}
+.important-tag {
+  background-color: skyblue;
+}
+.task {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  font-weight: 500;
+  column-gap: 10px;
+  align-items: center;
+}
+.task p {
+  display: flex;
+  justify-content: start;
+}
+.task button {
+  justify-self: center;
+}
+.important_task {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  font-weight: 500;
+  /* justify-items: center; */
+  align-items: center;
+}
+.important_task p {
+  display: flex;
+  justify-content: flex-start;
+}
+.important_task button {
+  justify-self: center;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  width: 650px;
+}
+li {
+  margin-bottom: 10px;
+}
+.completed_task {
+  text-decoration: line-through;
+  background-color: orangered;
 }
