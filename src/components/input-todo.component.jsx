@@ -1,14 +1,12 @@
 import { useContext, useRef, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { TodoContext } from "../contexts/todo-context";
 // import { onSubmitHandler } from "../utils/utils";
 
 function TodoInput() {
   const { setTasks, tasks } = useContext(TodoContext);
 
-  // useEffect(() => {
-  //   localStorage.setItem("regData", JSON.stringify(tasks));
-  // }, [tasks]);
+
   const [inputValue, setInputValue] = useState("");
   const [booleanCheck, setBooleanCheck] = useState(false);
   const inputRef = useRef(null);
@@ -20,6 +18,7 @@ function TodoInput() {
       isImportant: booleanCheck,
       ID: uuidv4(),
     };
+    console.log(uuidv4());
     let updatedTaskList;
     if (tasks) {
       updatedTaskList = [...tasks, newTask];

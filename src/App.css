@@ -20,6 +20,7 @@ FONT STYLES :
 }
 .todo_input {
   background-color: aquamarine;
+  border-radius: 15px;
 }
 form {
   display: flex;
@@ -50,14 +51,18 @@ input::placeholder {
 }
 
 .regular-task-container {
-  background-color: orangered;
+  background-color: #d3d3d3;
+
+  border-radius: 15px;
 }
 .important_completed_task {
   text-decoration: line-through;
-  background-color: skyblue;
+  background-color: #964d44;
+  border-radius: 15px;
 }
 .important-tag {
-  background-color: skyblue;
+  background-color: #ff7f7f;
+  border-radius: 15px;
 }
 .task {
   display: grid;
@@ -98,5 +103,6 @@ li {
 }
 .completed_task {
   text-decoration: line-through;
-  background-color: orangered;
+  background-color: #7aa7a7;
+  border-radius: 15px;
 }
