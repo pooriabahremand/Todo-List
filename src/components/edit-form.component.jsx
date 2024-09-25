@@ -7,7 +7,7 @@ function EditForm() {
     useContext(TodoContext);
 
   useEffect(() => {
-    localStorage.setItem("regData", JSON.stringify(tasks));
+    localStorage.setItem("taskData", JSON.stringify(tasks));
   }, [tasks]);
 
   const [newTask, setNewTask] = useState("");
@@ -24,7 +24,7 @@ function EditForm() {
     const updatedTaskList = [...onChangedTasks, ...taskThatIsGonnaChange];
     setTasks(updatedTaskList);
     setIsEditing(false);
-    localStorage.setItem("regData", JSON.stringify(updatedTaskList));
+    localStorage.setItem("taskData", JSON.stringify(updatedTaskList));
   };
   const inputChangeHandler = (event) => {
     setNewTask(event.target.value);

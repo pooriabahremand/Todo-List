@@ -6,16 +6,14 @@ function ImportantCompletedTask() {
     useContext(TodoContext);
 
   useEffect(() => {
-    const storedData = JSON.parse(
-      localStorage.getItem("importantCompletedTask")
-    );
+    const storedData = JSON.parse(localStorage.getItem("CompletedData"));
     setImportantCompletedTask(storedData);
   }, []);
 
   const deleteTask = (ID) => {
     let newArray = importantCompletedTask.filter((todo) => todo.ID !== ID);
     setImportantCompletedTask(newArray);
-    localStorage.setItem("importantCompletedTask", JSON.stringify(newArray));
+    localStorage.setItem("CompletedData", JSON.stringify(newArray));
   };
 
   const checkHandler = (task) => {
@@ -23,10 +21,10 @@ function ImportantCompletedTask() {
       (todo) => task.ID !== todo.ID
     );
     setImportantCompletedTask(newArray);
-    localStorage.setItem("importantCompletedTask", JSON.stringify(newArray));
+    localStorage.setItem("CompletedData", JSON.stringify(newArray));
     const updatedArray = [...tasks, task];
     setTasks(updatedArray);
-    localStorage.setItem("regData", JSON.stringify(updatedArray));
+    localStorage.setItem("taskData", JSON.stringify(updatedArray));
   };
 
   if (importantCompletedTask) {

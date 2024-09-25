@@ -5,37 +5,26 @@ import RegTask from "./regular-task.component";
 import EditForm from "./edit-form.component";
 import RegularCompletedTask from "./completed.regular.component";
 import ImportantCompletedTask from "./completed-important.component";
+import Tasks from "./Tasks";
 
 function TodoList() {
-  const { isEditing, tasks, importantTask, setTasks } = useContext(TodoContext);
+  const { isEditing, setTasks, tasks } = useContext(TodoContext);
 
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem("regData"));
+    const storedData = JSON.parse(localStorage.getItem("taskData"));
     setTasks(storedData);
   }, []);
 
-  if (isEditing) {
-    return (
-      <Fragment>
-        <EditForm />
-        <Fragment>
-          <ImportantTask />
-          <RegTask />
-          <ImportantCompletedTask />
-          <RegularCompletedTask />
-        </Fragment>
-      </Fragment>
-    );
-  } else {
-    return (
-      <Fragment>
-        <ImportantTask />
-        <RegTask />
-        <ImportantCompletedTask />
-        <RegularCompletedTask />
-      </Fragment>
-    );
-  }
+  return (
+    <Fragment>
+      {isEditing ? <EditForm /> : <></>}
+      <Tasks />
+      <ImportantTask />
+      <RegTask />
+      <ImportantCompletedTask />
+      <RegularCompletedTask />
+    </Fragment>
+  );
 }
 
 export default TodoList;

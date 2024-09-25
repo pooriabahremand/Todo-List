@@ -28,7 +28,7 @@ function TodoInput() {
     inputRef.current.focus();
     event.target.elements[0].value = "";
     setBooleanCheck(false);
-    localStorage.setItem("regData", JSON.stringify(updatedTaskList));
+    localStorage.setItem("taskData", JSON.stringify(updatedTaskList));
   };
   const inputChangeHandler = (event) => {
     setInputValue(event.target.value);

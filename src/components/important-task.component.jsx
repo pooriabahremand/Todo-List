@@ -29,7 +29,7 @@ function ImportantTask() {
   const deleteTask = (ID) => {
     let newArray = tasks.filter((todo) => todo.ID !== ID);
     setTasks(newArray);
-    localStorage.setItem("regData", JSON.stringify(newArray));
+    localStorage.setItem("taskData", JSON.stringify(newArray));
   };
 
   const editFormHandler = (ID) => {
@@ -45,13 +45,10 @@ function ImportantTask() {
       updatedArray = [task];
     }
     setImportantCompletedTask(updatedArray);
-    localStorage.setItem(
-      "importantCompletedTask",
-      JSON.stringify(updatedArray)
-    );
+    localStorage.setItem("CompletedData", JSON.stringify(updatedArray));
     const newArray = tasks.filter((todo) => task.ID !== todo.ID);
     setTasks(newArray);
-    localStorage.setItem("regData", JSON.stringify(newArray));
+    localStorage.setItem("taskData", JSON.stringify(newArray));
   };
 
   return (
